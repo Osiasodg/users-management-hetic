@@ -1,3 +1,18 @@
+import express from 'express'
+import dotenv from 'dotenv'
+
+const app = express()
+
+app.get('/', (req, res) => {
+  res.send('Users Management API')
+})
+
+app.listen(3000, () => {
+  console.log('Server is running on http://localhost:3000')
+})
+
+
+
 // import http from "node:http";
 // import { Json } from "./src/utils/responses.js";
 // import { listUsers } from "./src/users/users.controlers.js";
@@ -26,14 +41,3 @@
 // console.log("server running at http://127.0.0.1:3000/");
 
 
-import express from 'express'
-
-const app = express()
-
-app.get('/', (req, res) => {
-  res.send('Users Management API')
-})
-
-app.listen(3000, () => {
-  console.log('Server is running on http://localhost:3000')
-})
