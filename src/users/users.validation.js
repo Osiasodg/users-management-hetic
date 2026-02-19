@@ -26,7 +26,7 @@ export function validateUser(userData){
     return {
         ok: Object.keys(errors).length === 0,
         errors,
-        data: userData
+        data:userData
     };
 
 }
@@ -43,7 +43,7 @@ export function validateUpdateUser(userData){
 
     if (userData.password !== undefined){
         if(!isStrongPassword(userData.password)) errors.password= 'Password is invalid';
-        else data.password = userdata.password;
+        else data.password = userData.password;
     }
 
     if (userData.name !== undefined){
@@ -55,7 +55,7 @@ export function validateUpdateUser(userData){
     return {
         ok: Object.keys(errors).length === 0,
         errors,
-        data: userData
+        data: data
     };
 
 }
