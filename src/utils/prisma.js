@@ -1,3 +1,14 @@
-import { PrismaClient } from "./../../generated/prisma";
+// import { PrismaClient } from "./../../generated/prisma";
 
-export const prisma = new PrismaClient();
+// export const prisma = new PrismaClient();
+
+
+import'dotenv/config';
+import { PrismaClient } from "./../../generated/prisma/index.js";
+import { PrismaBetterSqlite3 } from '@prisma/adapter-better-sqlite3';
+
+const adapter= new PrismaBetterSqlite3({
+    url: process.env.DATABASE_URL,
+});
+
+export const prisma= new PrismaClient({adapter});
